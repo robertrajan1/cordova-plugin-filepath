@@ -214,7 +214,7 @@ public class FilePath extends CordovaPlugin {
                                         String[] selectionArgs) {
 
         Cursor cursor = null;
-        final String column = "_data";
+        final String column = MediaStore.MediaColumns.DISPLAY_NAME;
         final String[] projection = {
                 column
         };
