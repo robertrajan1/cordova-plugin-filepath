@@ -81,7 +81,7 @@ public class FilePath extends CordovaPlugin {
 
         if (action.equals("resolveNativePath")) {
             if(android.os.Build.VERSION.SDK_INT >= 33 && (PermissionHelper.hasPermission(this, MEDIA_IMAGES) && PermissionHelper.hasPermission(this, MEDIA_VIDEO))) {
-                    resolveNativePath();
+                resolveNativePath();
             } else if (PermissionHelper.hasPermission(this, READ)) {
                 resolveNativePath();
             } else {
@@ -429,7 +429,8 @@ public class FilePath extends CordovaPlugin {
                 } else if ("audio".equals(type)) {
                     contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
                 } else {
-                    contentUri = MediaStore.Files.getContentUri("external");
+                    //contentUri = MediaStore.Files.getContentUri("external");
+                    contentUri = uri;
                 }
 
                 final String selection = "_id=?";
